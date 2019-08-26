@@ -7,17 +7,19 @@ There will be weekly or bi-monthly updates that will make it more automated with
 I am new to all of this and have been self-teaching over the past year, so any ideas or help will be much appreciated.  Just know that I do not want someone to just make it better for me... I want to learn why it is better the new way.
 
 ### Installation Instructions
-1. Install latest Raspian Desktop OS on SD card and boot system.
-2. Make sure there is a keyboard and monitor connected (HDMI hookup).
+1. Make sure there is a keyboard and monitor connected (HDMI hookup).
+2. Install latest Raspian Desktop OS on SD card and boot system.
 3. Make sure the internet is connected (mobile hotspot works great)
-4. Open the terminal tehn copy-and-paste the command below (case sensitive):
+4. Open the terminal then type the command below (case sensitive):
 
           wget -O - "https.//raw/githubusercontent.com/Actane727/TimeTracking/master/install.sh | sudo bash
 
 5. Everything should download and the Pi should reboot.  Once restarted, it should open a terminal and be running the program.
 6. After reboot is complete, go to Menu>Preferences>Raspberry Pi Configuration>Interfaces and ensure that VNC Server is enabled.
-7. Download VNC Viewer onto your computer that can be on the same network as the Pi, via WiFi or ehternet cable (you can connect via a router or just by connecting directly to the ethernet port from your computer. 
+7. Download VNC Viewer onto your computer that can be on the same network as the Pi, via WiFi or ehternet cable (you can connect via a        router or just by connecting directly to the ethernet port from your computer. 
 8. Use "ifconfig" in the command line of the Pi to determine the IP Address and use this to remote into it via the VNC Viewer.
 9. Changes can be made to the program by opening a terminal and typing the command:
-  sudo nano /opt/TimeFiles/PunchTime.py
-  Make the changes and use Control+X then y and Enter to save.
+   
+          sudo nano /opt/TimeFiles/PunchTime.py  
+   
+   Make the necessary changes and use Control+X then y and Enter to save. If the system breaks, just use the wget command again to update.
