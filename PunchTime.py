@@ -45,7 +45,7 @@ def clearsave():    # Save the document to Desktop with date, then create a clea
         print("**The saved document is already at the most current document and saving now will create a blank document.")
         print ("/" * 80 + "\n")
 
-def restart():	# Restarting for changes to take effect for ease
+def restart():	# Restarting for changes to take effect for ease of use
     wb.save(filepath)
     answer = input("Are you sure that you want to reboot now? y/n ")
     if answer == "n":
@@ -66,7 +66,7 @@ def main():
     global condition
     global logs
     while True:
-        print("Please swipe your card to signin to the Finney County Maintenance Training Room.")
+        print("Please swipe your card to sign in to the Maintenance Department Training Room.")
         print("-" * 15 + "Type \"save\" to quick save or \"reboot\" to reboot Pi" + "-" * 15 + "\n")
         persNum = input()
         if persNum == "reboot":
