@@ -23,3 +23,4 @@ I am new to all of this and have been self-teaching over the past year, so any i
           sudo nano /opt/TimeFiles/PunchTime.py  
    
    Make the necessary changes and use Control+X then y and Enter to save. If the system breaks, just use the wget command again to update.
+10. WinSCP can be useful if you just want to transfer the files from the Pi to the computer, to manipulate or you can copy/paste the data       from libreoffice to Excel.
