@@ -11,8 +11,12 @@ fi
 #Step 2) Update repository----------------------------------
 sudo apt-get update -y
 
+#Step 3) Install modules
+sudo apt-get install python-pip -y
+pip install openpyxl
+sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer
 
-#Step 3) Download Python script-----------------------------
+#Step 4) Download Python script-----------------------------
 cd /opt/
 sudo mkdir -p TimeFiles
 cd /opt/TimeFiles
