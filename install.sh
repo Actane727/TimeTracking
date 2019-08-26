@@ -11,10 +11,13 @@ fi
 #Step 2) Update repository----------------------------------
 sudo apt-get update -y
 
-#Step 3) Install modules
+#Step 3) Install modules and install/enable VNC
 sudo apt-get install python-pip -y
 pip install openpyxl
+sudo apt-get install xterm
 sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer
+sudo ln -s /usr/lib/systemd/system/vncserver-x11-serviced.service /etc/systemd/system/multi-user.target.wants/vncserver-x11-serviced.service
+sudo systemctl start vncserver-x11-serviced
 
 #Step 4) Download Python script-----------------------------
 cd /opt/
@@ -24,17 +27,17 @@ script=PunchTime.py
 
 if [ -e $script ];
 	then
-		echo "Script PunchTime.py already exists. Overwriting file now!"
-		echo "Downloading ..."
+		echo "Script PunchTime.py already exists. Overwriting old file with new!"
+		echo "Updating ..."
 	else
 		echo "Script will be installed now! Downloading ..."
 fi
 
-wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/install.sh"
+wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/PunchTime.py"
 
 #-----------------------------------------------------------
 
-#Step 4) Enable Python script to run on start up------------
+#Step 4) Run script in terminal at startup------------
 cd /home/pi/.config
 mkdir autostart
 cd /autostart
@@ -46,7 +49,6 @@ if [ -e $TD ]; then
 else
   echo "[Desktop Entry]\nType=Application\nName=Time\nExec=xterm -hold -maximized -e \"/usr/bin/python3 /opt/TimeFiles/PunchTime.py" >> $TD
 fi
-
 
 #Step 5) Reboot to apply changes----------------------------
 echo "Punch Time Program installation done. Will now reboot after 3 seconds."
