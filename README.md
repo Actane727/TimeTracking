@@ -12,7 +12,7 @@ I am new to all of this and have been self-teaching over the past year, so any i
 3. Make sure the internet is connected (mobile hotspot works great)
 4. Open the terminal and type the command below (case sensitive):
 
-wget -O - "https.//raw/githubusercontent.com/Actane727/TimeTracking/master/install.sh | sudo bash
+          wget -O - "https.//raw/githubusercontent.com/Actane727/TimeTracking/master/install.sh | sudo bash
 
 5. Everything should download and the Pi should reboot.  Once restarted, it should open a terminal and be running the program.
 6. After reboot is complete, go to Menu>Preferences>Raspberry Pi Configuration>Interfaces and ensure that VNC Server is enabled.
