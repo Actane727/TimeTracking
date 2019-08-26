@@ -10,7 +10,7 @@ I am new to all of this and have been self-teaching over the past year, so any i
 1. Install latest Raspian Desktop OS on SD card and boot system.
 2. Make sure there is a keyboard and monitor connected (HDMI hookup).
 3. Make sure the internet is connected (mobile hotspot works great)
-4. Open the terminal and type the command below (case sensitive):
+4. Open the terminal tehn copy-and-paste the command below (case sensitive):
 
           wget -O - "https.//raw/githubusercontent.com/Actane727/TimeTracking/master/install.sh | sudo bash
 
