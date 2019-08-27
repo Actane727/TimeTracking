@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Time
+Exec=xterm -hold -maximized -e "/usr/bin/python3 /opt/TimeFiles/PunchTime.py"
