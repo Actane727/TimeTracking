@@ -28,15 +28,6 @@ sudo systemctl start vncserver-x11-serviced
 cd /opt/
 sudo mkdir -p TimeFiles
 cd /opt/TimeFiles
-script=PunchTime.py
-
-if [ -e $script ];
-	then
-		echo "Script PunchTime.py already exists. Overwriting old file with new!"
-		echo "Updating ..."
-	else
-		echo "Script will be installed now! Downloading ..."
-fi
 
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/PunchTime.py"
 
