@@ -49,7 +49,7 @@ sudo rm newfile.py
 #Step 8) Run script in terminal at startup------------
 cd /home/pi/.config
 mkdir autostart
-cd /autostart
+cd autostart/
 
 TD=time.desktop
 
