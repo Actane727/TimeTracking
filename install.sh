@@ -49,10 +49,11 @@ cd /autostart
 
 TD=time.desktop
 
-if [ -e $TD ]; then
-  echo "File $TD already exists!"
-else
-  echo "[Desktop Entry]\nType=Application\nName=Time\nExec=xterm -hold -maximized -e "/usr/bin/python3 /opt/TimeFiles/PunchTime.py" >> $TD
+if [ -e $TD ];
+        then
+                echo "File $TD already exists!"
+        else
+                echo "[Desktop Entry]\nType=Application\nName=Time\nExec=xterm -hold -maximized -e "/usr/bin/python3 /opt/TimeFiles/PunchTime.py" >> $TD
 fi
 
 #Step 8) Reboot to apply changes----------------------------
