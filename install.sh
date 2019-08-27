@@ -58,8 +58,10 @@ if [ -e $TD ]; then
 else
   cd
   wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/time.desktop"
-  sudo mv time.desktop .config/autostart
 fi
+
+cd
+sudo mv time.desktop .config/autostart
 
 
 #Step 9) Reboot to apply changes----------------------------
