@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 #Step 1) Check if root--------------------------------------
 if [[ $EUID -ne 0 ]]; then
    echo "Please execute script as root." 
