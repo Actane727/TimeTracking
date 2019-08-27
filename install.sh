@@ -25,7 +25,7 @@ touch /home/pi/Desktop/TrainingTime.xlsx
 sudo ln -s /usr/lib/systemd/system/vncserver-x11-serviced.service /etc/systemd/system/multi-user.target.wants/vncserver-x11-serviced.service
 sudo systemctl start vncserver-x11-serviced
 
-#Step 6) Download Python script-----------------------------
+#Step 6) Download Python scripts-----------------------------
 cd /opt/
 sudo mkdir -p TimeFiles
 cd /opt/TimeFiles
@@ -40,6 +40,9 @@ if [ -e $script ];
 fi
 
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/PunchTime.py"
+wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/newfile.py"
+
+python3 newfile.py
 
 #-----------------------------------------------------------
 
