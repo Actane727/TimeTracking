@@ -12,13 +12,13 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 #Step 3) Install software 
-sudo apt-get install libreoffice
-sudo apt-get install python-pip
-sudo apt-get install xterm
-sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer
+sudo apt-get install libreoffice -y
+sudo apt-get install python-pip -y
+sudo apt-get install xterm -y
+sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer -y
 
 #Step 4) Install openpyxl
-pip install openpyxl
+pip install openpyxl -y
 
 #Step 5) Enable VNC Server
 sudo ln -s /usr/lib/systemd/system/vncserver-x11-serviced.service /etc/systemd/system/multi-user.target.wants/vncserver-x11-serviced.service
