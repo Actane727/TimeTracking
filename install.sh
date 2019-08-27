@@ -9,7 +9,6 @@ fi
 
 #Step 2) Update repository----------------------------------
 sudo apt-get update -y
-wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/time.desktop"
 
 #Step 3) Install software 
 sudo apt-get install libreoffice -y
@@ -51,7 +50,8 @@ sudo rm newfile.py
 cd /home/pi/.config
 mkdir autostart
 cd autostart/
-cd
+cd /home/pi
+wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/time.desktop"
 sleep 3
 sudo mv time.desktop .config/autostart
 
