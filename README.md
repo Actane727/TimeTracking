@@ -12,7 +12,7 @@ I am new to all of this and have been self-teaching over the past year, so any i
 3. Make sure the internet is connected (mobile hotspot works great).
 4. Open the terminal, then type the command below (case sensitive):
 
-          wget -O - "https.//raw/githubusercontent.com/Actane727/TimeTracking/master/install.sh | sudo bash
+          wget -O - "https.//raw/githubusercontent.com/Actane727/TimeTracking/master/install.sh" | sudo bash
 
 5. Everything should download and the Pi should reboot.  Once restarted, it should open a terminal and be running the program.
 6. After reboot is complete, go to Menu>Preferences>Raspberry Pi Configuration>Interfaces and ensure that VNC Server is enabled.
@@ -23,4 +23,4 @@ I am new to all of this and have been self-teaching over the past year, so any i
           sudo nano /opt/TimeFiles/PunchTime.py  
    
    Make the necessary changes and use Control+X then y and Enter to save. If the system breaks, just use the wget command again to update.
-10. WinSCP can be useful if you just want to transfer the files from the Pi to the computer, to manipulate or you can copy/paste the data       from libreoffice to Excel.
+10. WinSCP can be useful if you just want to transfer the files from the Pi to the computer, to manipulate or you can copy/paste the data from libreoffice to Excel.
