@@ -18,7 +18,7 @@ sudo apt-get install xterm -y
 sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer -y
 
 #Step 4) Install openpyxl
-pip install openpyxl -y
+pip install openpyxl
 
 #Step 5) Enable VNC Server
 sudo ln -s /usr/lib/systemd/system/vncserver-x11-serviced.service /etc/systemd/system/multi-user.target.wants/vncserver-x11-serviced.service
@@ -54,7 +54,7 @@ if [ -e $TD ]; then
 else
   cd
   wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/time.desktop"
-  sudo mv time.desktop /.config/autostart
+  sudo mv time.desktop .config/autostart
 fi
 
 
