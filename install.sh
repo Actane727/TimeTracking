@@ -42,11 +42,13 @@ fi
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/PunchTime.py"
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/newfile.py"
 
+#Step 7) Make .xlsx file that can be used with openpyxl
 python3 newfile.py
+sudo rm newfile.py
 
 #-----------------------------------------------------------
 
-#Step 7) Run script in terminal at startup------------
+#Step 8) Run script in terminal at startup------------
 cd /home/pi/.config
 mkdir autostart
 cd /autostart
@@ -62,7 +64,7 @@ else
 fi
 
 
-#Step 8) Reboot to apply changes----------------------------
+#Step 9) Reboot to apply changes----------------------------
 echo "Punch Time Program installation done. Will now reboot after 3 seconds."
 sleep 3
 sudo reboot
