@@ -52,6 +52,7 @@ mkdir autostart
 cd autostart/
 cd
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/time.desktop"
+sleep 3
 sudo mv time.desktop .config/autostart
 
 
