@@ -52,8 +52,9 @@ TD=time.desktop
 if [ -e $TD ]; then
   echo "File $TD already exists!"
 else
-  echo "[Desktop Entry]\nType=Application\nName=Time\nExec=xterm -hold -maximized -e \"/usr/bin/python3 /opt/TimeFiles/PunchTime.py" >> $TD
+  wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/time.desktop"
 fi
+
 
 #Step 8) Reboot to apply changes----------------------------
 echo "Punch Time Program installation done. Will now reboot after 3 seconds."
