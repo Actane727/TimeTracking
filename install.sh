@@ -9,7 +9,6 @@ fi
 
 #Step 2) Update repository----------------------------------
 sudo apt-get update -y
-sudo apt-get upgrade -y
 
 #Step 3) Install software 
 sudo apt-get install libreoffice -y
@@ -17,9 +16,8 @@ sudo apt-get install python3 -y
 sudo apt-get install xterm -y
 sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer -y
 
-#Step 4) Install openpyxl and make file
+#Step 4) Install openpyxl
 sudo apt install python3-openpyxl -y
-touch /home/pi/Desktop/TrainingTime.xlsx
 
 #Step 5) Enable VNC Server
 sudo ln -s /usr/lib/systemd/system/vncserver-x11-serviced.service /etc/systemd/system/multi-user.target.wants/vncserver-x11-serviced.service
