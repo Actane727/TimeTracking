@@ -52,7 +52,9 @@ TD=time.desktop
 if [ -e $TD ]; then
   echo "File $TD already exists!"
 else
+  cd
   wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/time.desktop"
+  sudo mv time.desktop /.config/autostart
 fi
 
 
