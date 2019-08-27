@@ -40,21 +40,10 @@ fi
 
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/PunchTime.py"
 
-#-----------------------------------------------------------
-
 #Step 7) Run script in terminal at startup------------
 cd /home/pi/.config
 mkdir autostart
 cd /autostart
-
-TD=time.desktop
-
-if [ -e $TD ];
-        then
-                echo "File $TD already exists!"
-        else
-                echo "File will be installed now! Downloading ..."
-fi
 
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/time.desktop"
 
@@ -62,4 +51,3 @@ wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTrac
 echo "Punch Time Program installation done. Will now reboot after 3 seconds."
 sleep 3
 sudo reboot
-#-----------------------------------------------------------
