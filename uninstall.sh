@@ -23,6 +23,9 @@ sudo apt purge python3-openpyxl -y
 cd /opt/TimeFiles
 sudo rm PunchTime.py
 
+#Step 6) Remove related files-----------------------------
+cd /home/pi/Desktop
+sudo rm TrainingTime.xlsx
 #-----------------------------------------------------------
 
 #Step 6) Remove run script in terminal at startup------------
