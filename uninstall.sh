@@ -14,7 +14,6 @@ sudo apt update -y
 sudo apt purge libreoffice -y
 sudo apt purge python3 -y
 sudo apt purge xterm -y
-sudo apt purge realvnc-vnc-viewer -y
 
 #Step 4) Uninstall openpyxl
 sudo apt purge python3-openpyxl -y
@@ -38,7 +37,6 @@ sudo rmdir autostart
 
 #Step 7) Clean up the mess------------
 sudo apt autoremove -y
-sudo apt autoclean -y
 
 #Step 8) Reboot to apply changes----------------------------
 echo "Punch Time Program uninstalled. Will now reboot after 3 seconds."
