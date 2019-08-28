@@ -1,4 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=Time
-Exec=xterm -hold -e "/usr/bin/python3 /opt/TimeFiles/PunchTime.py"
+Exec=xterm -hold -e "/usr/bin/python3 /opt/TimeFiles/punchtime.py"
+X-GNOME-Autostart-Delay=3
