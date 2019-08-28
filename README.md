@@ -28,9 +28,9 @@ I am new to all of this and have been self-teaching over the past year, so any i
 13. When it reboots, it will guide you through the setup of the Pi.  Follow each step to set up locale (be sure to check the "US Keyboard" check box) and it will let you set up your network.
 14. The Pi will then reboot again to save changes and now it is time to adjust some things and get to know the operating system.
 15. Go to the top Panel or Menu and right-click.  Then open Panel Settings:
-          1. In the "Geometry" tab, change the width to 9, the height to 16, and icon size to 16.
-          2. In the "Panel Applets" tab, remove everything except Menu, Wireless & Wired Network, and Digit Clock.
-          3. In the "Advanced" tab, uncheck "Make window managers treat the panel as dock" and check "Minimize panel when not in use", then change the "2" to "0" for the size and click Close. *You will still be able to access this bar by hovering at the top of the screen or by pushing the Windows key on your keyboard.
+16. In the "Geometry" tab, change the width to 9, the height to 16, and icon size to 16.
+17. In the "Panel Applets" tab, remove everything except Menu, Wireless & Wired Network, and Digit Clock.
+18. In the "Advanced" tab, uncheck "Make window managers treat the panel as dock" and check "Minimize panel when not in use", then change the "2" to "0" for the size and click Close. *You will still be able to access this bar by hovering at the top of the screen or by pushing the Windows key on your keyboard.
 
 ## Installing the necessary files and making changes to the system
 
