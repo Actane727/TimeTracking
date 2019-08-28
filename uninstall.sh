@@ -32,8 +32,8 @@ cd /home/pi/.config
 sudo rmdir autostart
 
 #Step 7) Clean up the mess------------
-sudo apt autoremove
-sudo apt autoclean
+sudo apt autoremove -y
+sudo apt autoclean -y
 
 #Step 8) Reboot to apply changes----------------------------
 echo "Punch Time Program uninstalled. Will now reboot after 3 seconds."
