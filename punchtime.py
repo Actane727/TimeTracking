@@ -12,7 +12,7 @@ filepath = "/home/pi/Desktop/TrainingTime.xlsx" 	# -Filepath to the running docu
 logs = 0	# This is to only save the data sheet after a certain number of punch-in times.
 
 if os.path.isfile(filepath):
-    print("TrainingTime.xlsx exists")
+    print("")
 else:
     wb = Workbook()
     wb.save(filepath)
