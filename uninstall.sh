@@ -22,6 +22,8 @@ sudo apt purge python3-openpyxl -y
 #Step 5) Remove Python scripts-----------------------------
 cd /opt/TimeFiles
 sudo rm PunchTime.py
+cd /opt
+sudo rmdir TimeFiles
 
 #Step 6) Remove related files-----------------------------
 cd /home/pi/Desktop
