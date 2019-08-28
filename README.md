@@ -53,7 +53,7 @@ I am new to all of this and have been self-teaching over the past year, so any i
 	1. Press the Windows key and go to Accessories > File Manager then navigate to /opt/TimeFiles/PunchTime.py and right-click to bring up menu to open with Geany.
 	2. You can make any changes you see fit in the Geany program and then simply use the save function, then reboot the system by going to Logout at the bottom of the Windows button menu.
 
-## Unistalling the program and returning to the standard OS
+## Uninstalling the program and returning to the standard OS
 1. Press the Windows key, go to Accessories and open Terminal.
 2. In the terminal, type (or copy-and-paste) the following command as it is (this is case sensitive).
 
