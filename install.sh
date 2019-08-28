@@ -11,10 +11,10 @@ fi
 sudo apt-get update -y
 
 #Step 3) Install software 
-sudo apt-get install libreoffice -y
-sudo apt-get install python3 -y
-sudo apt-get install xterm -y
-sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer -y
+sudo apt install libreoffice -y
+sudo apt install python3 -y
+sudo apt install xterm -y
+sudo apt install realvnc-vnc-server realvnc-vnc-viewer -y
 
 #Step 4) Install openpyxl
 sudo apt install python3-openpyxl -y
