@@ -37,7 +37,7 @@ if [ -e $script ];
 		echo "Script will be installed now! Downloading ..."
 fi
 
-wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/PunchTime.py"
+wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/punchtime.py"
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/newfile.py"
 
 #Step 7) Make .xlsx file that can be used with openpyxl
