@@ -4,16 +4,24 @@ from openpyxl import*
 import datetime as dt
 import warnings
 import os
+import os.path
 from time import sleep
 
-warnings.simplefilter("ignore") 	# -----------------Ignoring errors that come up on initial boot
 filepath = "/home/pi/Desktop/TrainingTime.xlsx" 	# -Filepath to the running document
+# condition = 1	# This helps to keep from saving a blank document to the Desktop
+logs = 0	# This is to only save the data sheet after a certain number of punch-in times.
+
+if os.path.isfile(filepath):
+    print("TrainingTime.xlsx exists")
+else:
+    wb = Workbook()
+    wb.save(filepath)
+
+warnings.simplefilter("ignore") 	# -----------------Ignoring errors that come up on initial boot
 wb = load_workbook(filepath)	# ---------------------Running workbook
 warnings.simplefilter("default")	# -----------------Returning the warning back on to normal after boot
 ws = wb.active	# -------------------------------------Making Sheet1 active sheet
 
-# condition = 1	# This helps to keep from saving a blank document to the Desktop
-logs = 0	# This is to only save the data sheet after a certain number of punch-in times.
 
 
 # /////////////////////////////////////////////Functions and Definitions//////////////////////////////////////////////////
