@@ -1,5 +1,11 @@
 [Desktop Entry]
-Type=Application
+Encoding=UTF-8
 Name=Time
+GenericName=Time
+Comment=Time
 Exec=sleep 3
+TryExec=xterm -hold -e "/usr/bin/python3 /opt/TimeFiles/punchtime.py"
 Exec=xterm -hold -e "/usr/bin/python3 /opt/TimeFiles/punchtime.py"
+Icon=xterm
+Type=Application
+Categories=Utility;
