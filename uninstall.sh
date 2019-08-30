@@ -28,10 +28,8 @@ sudo rm TrainingTime.xlsx
 #-----------------------------------------------------------
 
 #Step 6) Remove run script in terminal at startup------------
-cd /home/pi/.config/autostart
-sudo rm time.desktop
-cd /home/pi/.config
-sudo rmdir autostart
+cd
+sed -i -e '/lxterminal/d' .config/lxsession/LXDE-pi/autostart
 
 #Step 7) Clean up the mess------------
 sudo apt autoremove -y
