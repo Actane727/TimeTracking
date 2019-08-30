@@ -12,7 +12,6 @@ sudo apt update -y
 
 #Step 3) Uninstall software 
 sudo apt purge libreoffice -y
-sudo apt purge xterm -y
 
 #Step 4) Uninstall openpyxl
 sudo apt purge python3-openpyxl -y
