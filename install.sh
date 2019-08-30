@@ -47,7 +47,7 @@ cd
 sudo rmdir /home/pi/.config/autostart
 cd
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/autostart"
-sudo mv autostart .config/lxsession/LXDE-pi
+sudo mv autostart /home/pi/.config/lxsession/LXDE-pi
 
 
 #Step 8) Reboot to apply changes----------------------------
