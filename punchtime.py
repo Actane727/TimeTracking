@@ -26,7 +26,7 @@ ws = wb.active	# -------------------------------------Making Sheet1 active sheet
 
 # /////////////////////////////////////////////Functions and Definitions//////////////////////////////////////////////////
 def save():     # This is the standard save function
-    print("-" * 80 + "\nThe file has been saved at " + dt.datetime.now().strftime('%m/%d/%y %H:%M') + ".\n")
+    print("-" * 79 + "\nThe file has been saved at " + dt.datetime.now().strftime('%m/%d/%y %H:%M') + ".\n")
     wb.save(filepath)
     global condition
     condition = 0
@@ -42,16 +42,16 @@ def clearsave():    # Save the document to Desktop with date, then create a clea
     global condition
     if condition == 0:
         wb.save('/home/pi/Desktop/' + dt.datetime.now().strftime('%m-%d-%y %H:%M') + '.xlsx')
-        print("/" * 80 + "\nThe file has been saved to the Desktop for the Dashboard update.")
+        print("/" * 79 + "\nThe file has been saved to the Desktop for the Dashboard update.")
         print("File name is:" + dt.datetime.now().strftime('%m-%d-%y %H:%M'))
-        print("/" * 80 + "\n")
+        print("/" * 79 + "\n")
         wb = Workbook()
         wb.save(filepath)
         condition = 1
     else:
-        print("/" * 80)
+        print("/" * 79)
         print("**The saved document is already at the most current document and saving now will create a blank document.")
-        print ("/" * 80 + "\n")
+        print ("/" * 79 + "\n")
 
 def restart():	# Restarting for changes to take effect for ease of use
     wb.save(filepath)
@@ -60,7 +60,7 @@ def restart():	# Restarting for changes to take effect for ease of use
         print("The system will not shutdown.\n")
         pass
     elif answer == "y":
-        print("-" * 80 + "\nThe system will reboot now...\n")
+        print("-" * 79 + "\nThe system will reboot now...\n")
         print("Rebooting.........")
         sleep(3)
         os.system('sudo shutdown -r now')
@@ -75,7 +75,7 @@ def main():
     global logs
     while True:
         print("Please swipe your card to sign in to the Maintenance Department Training Room.")
-        print("-" * 15 + "Type \"save\" to quick save or \"reboot\" to reboot Pi" + "-" * 15 + "\n")
+        print("-" * 14 + "Type \"save\" to quick save or \"reboot\" to reboot Pi" + "-" * 14 + "\n")
         persNum = input()
         if persNum == "reboot":
             restart()
