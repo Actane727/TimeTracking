@@ -42,9 +42,6 @@ wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTrac
 #-----------------------------------------------------------
 
 #Step 7) Run script in terminal at startup------------
-sudo rm /home/pi/.config/autostart/time.desktop
-cd
-sudo rmdir /home/pi/.config/autostart
 cd
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/autostart"
 sudo mv autostart /home/pi/.config/lxsession/LXDE-pi
