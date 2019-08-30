@@ -1,0 +1,5 @@
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@lxterminal -e /usr/bin/python3 /opt/TimeFiles/punchtime.py
+@xscreensaver -no-splash
+point-rpi
