@@ -43,6 +43,8 @@ wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTrac
 #Step 7) Run script in terminal at startup------------
 cd
 wget -N -q --show-progress "https://raw.githubusercontent.com/Actane727/TimeTracking/master/autostart"
+mkdir /home/pi/.config/lxsession
+mkdir /home/pi/.config/lxsession/LXDE-pi
 sudo mv autostart /home/pi/.config/lxsession/LXDE-pi
 
 
