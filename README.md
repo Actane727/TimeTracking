@@ -73,12 +73,12 @@ I am new to all of this and have been self-teaching over the past year, so any i
 4. Arrow down until you see the lines shown below and change the persNum numbers to match what your cards show when swiped.
 
 		## Change the top of the main() section, shown below, to match your numbers from the card swipe.
-		elif persNum == "put your number here":
-            		clearsave()
-            		continue
-        	elif persNum == "another approved person here":
-            		clearsave()
-			
+		elif persNum == "your number here":
+            clearsave()
+            continue
+        elif persNum == "another approved person":
+            clearsave()
+	    
 4. You can retrieve the information from the VNC Viewer or you can copy over the entire file via the WinSCP.
 5. Check from time to time to ensure the program is still running correctly.
 6. Be sure to get the Excel Sheet Dashboard .xlsm file to input the data and create your reports. 
