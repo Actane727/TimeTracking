@@ -79,7 +79,7 @@ I am new to all of this and have been self-teaching over the past year, so any i
         elif persNum == "another approved person":
             clearsave()
 	    
-4. You can retrieve the information from the VNC Viewer or you can copy over the entire file via the WinSCP.
+4. You can retrieve the information from the VNC Viewer, by opening the .xlsx file in LibreOffice and copying the data, or you can copy    over the entire file via the WinSCP.
 5. Check from time to time to ensure the program is still running correctly.
 6. Be sure to get the Excel Sheet Dashboard .xlsm file to input the data and create your reports. 
 
