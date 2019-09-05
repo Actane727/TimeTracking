@@ -33,7 +33,7 @@ I am new to all of this and have been self-teaching over the past year, so any i
 2. Type "ifconfig" in the terminal to find the IP Address of the Pi and write this down.
 3. In the terminal, type (or copy-and-paste) the following command as it is (this is case sensitive).
 
-			wget -O - "https://raw.githubusercontent.com/Actane727/TimeTracking/master/install.sh" | sudo bash
+		wget -O - "https://raw.githubusercontent.com/Actane727/TimeTracking/master/install.sh" | sudo bash
 			
 4. The program will automatically download all necessary files and make any necessary changes to your system and then reboot.
 5. Once rebooted, there should be a "terminal" window with a prompt to sign in.
@@ -44,7 +44,7 @@ I am new to all of this and have been self-teaching over the past year, so any i
 	### Editing by the terminal
 	1. Open a terminal session and type the following command.
 			
-			sudo nano /opt/TimeFiles/punchtime.py
+		sudo nano /opt/TimeFiles/punchtime.py
 			
 	2. Then, using the arrow keys, find in the program where the string you want to change is (a string is wrapped in "" "", or ' '.
 	3. Once changes are made, then you can save by pressing Control+X, then Y and then Enter.
@@ -88,4 +88,4 @@ I am new to all of this and have been self-teaching over the past year, so any i
 1. Press the Windows key, go to Accessories and open Terminal.
 2. In the terminal, type (or copy-and-paste) the following command as it is (this is case sensitive).
 
-			wget -O - "https://raw.githubusercontent.com/Actane727/TimeTracking/master/uninstall.sh" | sudo bash	
+		wget -O - "https://raw.githubusercontent.com/Actane727/TimeTracking/master/uninstall.sh" | sudo bash	
