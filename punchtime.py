@@ -101,11 +101,10 @@ def main():
                 continue
         if persnum == persold:
             diff = dt.datetime.now() - oldtime
-            if diff.total_seconds() <= 120:
-                print(diff)
+            if diff.total_seconds() <= 300:
+                print("You have just clocked in " + str(int(diff.totalseconds())) + " seconds ago.\n")
                 continue
             else:
-                print(diff)
                 pass
         else:
             pass
