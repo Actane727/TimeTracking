@@ -7,8 +7,8 @@ import os
 import os.path
 from time import sleep
 
-filepath = "/home/pi/Desktop/TrainingTime.xlsx"  # -Filepath to the running document
-logs = 0  # This is to only save the data sheet after a certain number of punch-in times.
+filepath = "/home/pi/Desktop/TrainingTime.xlsx"
+logs = 0
 oldtime = 0
 persold = 0
 
@@ -18,26 +18,26 @@ else:
     wb = Workbook()
     wb.save(filepath)
 
-warnings.simplefilter("ignore")  # ------------------Ignoring errors that come up on initial boot
-wb = load_workbook(filepath)  # ---------------------Running workbook
-warnings.simplefilter("default")  # -----------------Returning the warning back on to normal after boot
-ws = wb.active  # -----------------------------------Making Sheet1 active sheet
+warnings.simplefilter("ignore")
+wb = load_workbook(filepath)
+warnings.simplefilter("default")
+ws = wb.active
 
 
-# /////////////////////////////////////////////Functions and Definitions////////////////////////////////////////////////
-def save():     # This is the standard save function
+
+def save():
     print("-" * 79 + "\nThe file has been saved at " + dt.datetime.now().strftime('%m/%d/%y %H:%M') + ".\n")
     wb.save(filepath)
     global condition
     condition = 0
 
 
-def justsave():    # This is only saving the document.
+def justsave():
     print("The file has been saved at " + dt.datetime.now().strftime('%m/%d/%y %H:%M') + ".\n")
     wb.save(filepath)
 
 
-def clearsave():    # Save the document to Desktop with date, then create a clear document with original name
+def clearsave():
     global wb
     global condition
     if condition == 0:
@@ -54,7 +54,7 @@ def clearsave():    # Save the document to Desktop with date, then create a clea
         print("/" * 79 + "\n")
 
 
-def restart():  # Restarting for changes to take effect for ease of use
+def restart():
     wb.save(filepath)
     answer = input("Are you sure that you want to reboot now? y/n ")
     if answer == "n":
@@ -70,7 +70,6 @@ def restart():  # Restarting for changes to take effect for ease of use
         pass
 
 
-# ////////////////////////////////////////Main Program////////////////////////////////////////////////
 def main():
     global condition
     global logs
