@@ -10,9 +10,10 @@ filepath = "/home/pi/Desktop/TrainingTime.xlsx"
 logs = 0
 oldtime = 0
 persold = 0
+global persnum
 
 if os.path.isfile(filepath):
-    print("")
+    pass
 else:
     wb = Workbook()
     wb.save(filepath)
@@ -46,7 +47,7 @@ def oneshot():
     run_once = 0
     while True:
         if run_once == 0:
-            if dt.datetime.now().strftime('%A %H %p') == "Monday 12 AM":
+            if dt.datetime.now().strftime('%A %l:%M %p') == "Monday 12 AM":
                 print("/" * 79)
                 print("         **The new sheet has been made and is ready for the new week!**")
                 print("/" * 79 + "\n")
@@ -81,8 +82,60 @@ def save():
     condition = 0
 
 
+def train():
+    global persnum
+    training = True
+    oneline = True
+    oldnumber = 0
+    book = Workbook()
+    if persnum == "0900878466":
+        topic = "Confined Space"
+    elif persnum == "0900558136":
+        topic = "Fire Safety"
+    elif persnum == "0900762450":
+        topic = "Hazardous Energy"
+    elif persnum == "0900550943":
+        topic = "Other"
+    elif persnum == "0900824101":
+        topic = "HazMat"
+    else:
+        topic = "Unidentified"
+    topicpath = "/home/pi/Desktop/" + topic + dt.datetime.now().strftime(' %B %d, %Y') +".xlsx" 
+    book.save(topicpath)
+    sheet = book['Sheet']
+    while training:
+        if oneline:
+            print('Please swipe your card to sign in to {} Training.'.format(topic))
+            oneline = False
+        number = input()
+        if number == "stop":
+            book.save(topicpath)
+            print("")
+            break
+        else:
+            try:
+                int(number)
+                pass
+            except ValueError:
+                print(number + " is not a valid personnel number!\n")
+                continue
+        if number == oldnumber:
+            deltat = dt.datetime.now() - firsttime
+            if deltat.total_seconds() <= 300:
+                continue
+            else:
+                pass
+        else:
+            pass
+        next_row = sheet.max_row + 1
+        sheet['B{}'.format(next_row)] = int(number)
+        sheet['C{}'.format(next_row)] = dt.datetime.now().strftime('%-m/%-d/%Y %l:%M:00 %p')
+        firsttime = dt.datetime.now()
+        oldnumber = number
+
+
 def main():
-    global condition, logs, oldtime, persold
+    global condition, logs, oldtime, persold, persnum
     while True:
         print("Please swipe your card to sign in to the Maintenance Department Training Room.")
         print("-" * 14 + "Type \"save\" to quick save or \"reboot\" to reboot Pi" + "-" * 14 + "\n")
@@ -93,11 +146,8 @@ def main():
         elif persnum == "save":
             justsave()
             continue
-        elif persnum == "0900383671":
-            save()
-            continue
-        elif persnum == "0900754894":
-            save()
+        elif str(persnum) == "0900878466" or "0900558136" or "0900762450" or "0900550943" or "0900824101":
+            train()
             continue
         else:
             try:
