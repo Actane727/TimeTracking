@@ -47,7 +47,7 @@ def oneshot():
     run_once = 0
     while True:
         if run_once == 0:
-            if dt.datetime.now().strftime('%A %l:%M %p') == "Monday 12 AM":
+            if dt.datetime.now().strftime('%A %l:%M %p') == "Sunday 12 AM":
                 print("/" * 79)
                 print("         **The new sheet has been made and is ready for the new week!**")
                 print("/" * 79 + "\n")
@@ -108,9 +108,10 @@ def train():
             print('Please swipe your card to sign in to {} Training.'.format(topic))
             oneline = False
         number = input()
-        if number == "stop":
+        if number == "0900704147":
             book.save(topicpath)
-            print("")
+            print("Group Training Stopped!!!\n")
+            training = False
             break
         else:
             try:
