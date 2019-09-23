@@ -10,7 +10,6 @@ filepath = "/home/pi/Desktop/TrainingTime.xlsx"
 logs = 0
 oldtime = 0
 persold = 0
-global persnum
 
 if os.path.isfile(filepath):
     pass
@@ -83,23 +82,11 @@ def save():
 
 
 def train():
-    global persnum
+    global topic
     training = True
     oneline = True
     oldnumber = 0
     book = Workbook()
-    if persnum == "0900878466":
-        topic = "Confined Space"
-    elif persnum == "0900558136":
-        topic = "Fire Safety"
-    elif persnum == "0900762450":
-        topic = "Hazardous Energy"
-    elif persnum == "0900550943":
-        topic = "Other"
-    elif persnum == "0900824101":
-        topic = "HazMat"
-    else:
-        topic = "Unidentified"
     topicpath = "/home/pi/Desktop/" + topic + dt.datetime.now().strftime(' %B %d, %Y') +".xlsx" 
     book.save(topicpath)
     sheet = book['Sheet']
@@ -136,7 +123,7 @@ def train():
 
 
 def main():
-    global condition, logs, oldtime, persold, persnum
+    global condition, logs, oldtime, persold, persnum, topic
     while True:
         print("Please swipe your card to sign in to the Maintenance Department Training Room.")
         print("-" * 14 + "Type \"save\" to quick save or \"reboot\" to reboot Pi" + "-" * 14 + "\n")
@@ -147,8 +134,27 @@ def main():
         elif persnum == "save":
             justsave()
             continue
-        elif str(persnum) == "0900878466" or "0900558136" or "0900762450" or "0900550943" or "0900824101":
+        elif persnum == "0900878466":
+            topic = "Confined Space"
             train()
+            continue
+        elif persnum == "0900558136":
+            topic = "Fire Safety"
+            train()
+            continue
+        elif persnum == "0900762450":
+            topic = "Hazardous Energy"
+            train()
+            continue
+        elif persnum == "0900550943":
+            topic = "Other"
+            train()
+            continue
+        elif persnum == "0900824101":
+            topic = "HazMat"
+            train()
+            continue
+        elif persnum == "0900704147":
             continue
         else:
             try:
@@ -162,10 +168,8 @@ def main():
             if diff.total_seconds() <= 300:
                 print("You have just clocked in " + str(int(diff.total_seconds())) + " seconds ago.\n")
                 continue
-            else:
-                pass
-        else:
-            pass
+            else: pass
+        else: pass
         input_row = wb.active.max_row + 1
         ws['B{}'.format(input_row)] = int(persnum)
         ws['C{}'.format(input_row)] = dt.datetime.now().strftime('%-m/%-d/%y %l:%M:00 %p')
