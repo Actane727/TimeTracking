@@ -6,7 +6,9 @@ import warnings, os
 from time import sleep
 from threading import Thread
 
-filepath = "/home/pi/Desktop/TrainingTime.xlsx"
+currentyr = dt.datetime.now().strftime('%y')
+filepath = "/home/pi/Desktop/TrainingTime '" + currentyr + ".xlsx"
+grouppath = "/home/pi/Desktop/GroupTraining '" + currentyr + ".xlsx"
 logs = 0
 oldtime = 0
 persold = 0
@@ -17,16 +19,29 @@ else:
     wb = Workbook()
     wb.save(filepath)
 
+if os.path.isfile(grouppath):
+    pass
+else:
+    book = Workbook()
+    book.save(grouppath)
+
 warnings.simplefilter("ignore")
 wb = load_workbook(filepath)
 warnings.simplefilter("default")
+sheets = wb.sheetnames
+
+if 'Sheet' in sheets:
+            pass
+else:
+            wb.create_sheet('Sheet', 0)
+
 ws = wb['Sheet']
 
 
 def clearsave():
     global wb, ws, condition
     if condition == 0:
-        ws.title = dt.date.today().strftime('%B %d, %Y')
+        ws.title = dt.date.today().strftime('%b %d, %Y')
         wb.create_sheet('Sheet', 0)
         ws = wb['Sheet']
         wb.save(filepath)
@@ -35,28 +50,38 @@ def clearsave():
         print("/" * 79)
         print("**The saved document is already at the most current document. Saving now will create a blank document.")
         print("/" * 79 + "\n")
-             
-        
+
+
 def justsave():
     print("The file has been saved at " + dt.datetime.now().strftime('%m/%d/%y %H:%M') + ".\n")
     wb.save(filepath)
-    
+
 
 def oneshot():
+    global currentyr, wb, filepath
     run_once = 0
     while True:
         if run_once == 0:
-            if dt.datetime.now().strftime('%A %l:%M %p') == "Sunday 12 AM":
+            if dt.datetime.now().strftime('%a %H %P') == "Sun 01 am":
                 print("/" * 79)
                 print("         **The new sheet has been made and is ready for the new week!**")
                 print("/" * 79 + "\n")
                 clearsave()
+                if dt.datetime.now().strftime('%y') == currentyr:
+                    pass
+                else:
+                    os.system('sudo mkdir /home/pi/Desktop/TimeFiles' + currentyr)
+                    os.system('sudo mv /home/pi/Desktop/*.xlsx /home/pi/Desktop/TimeFiles' + currentyr)
+                    currentyr = dt.datetime.now().strftime('%y')
+                    wb = Workbook()
+                    wb.save(filepath)
+                    print("          **A new workbook has been created for the new year!**\n")
                 print("Please swipe your card to sign in to the Maintenance Department Training Room.")
                 print("-" * 14 + "Type \"save\" to quick save or \"reboot\" to reboot Pi" + "-" * 14 + "\n")
                 run_once = 1
             else:
                 run_once = 0
-        
+
 
 def restart():
     wb.save(filepath)
@@ -66,37 +91,55 @@ def restart():
         pass
     elif answer == "y":
         print("-" * 79 + "\nThe system will reboot now...\n")
+        sleep(2)
         print("Rebooting.........")
         sleep(3)
         os.system('sudo shutdown -r now')
     else:
         print("That is not a proper answer...\n")
         pass
-    
-    
+
+
 def save():
     global condition
-    print("-" * 79 + "\nThe file has been saved at " + dt.datetime.now().strftime('%m/%d/%y %H:%M') + ".\n")
+    print("-" * 79 + "\nThe file has been saved at " + dt.datetime.now().strftime('%D %H:%M') + ".\n")
     wb.save(filepath)
     condition = 0
 
 
 def train():
-    global topic
+    global topic, grouppath
     training = True
     oneline = True
     oldnumber = 0
-    book = Workbook()
-    topicpath = "/home/pi/Desktop/" + topic + dt.datetime.now().strftime(' %B %d, %Y') +".xlsx" 
-    book.save(topicpath)
-    sheet = book['Sheet']
+    book = load_workbook(grouppath)
+    names = book.sheetnames
+
+    if topic in names:
+        sheet = book[topic]
+        pass
+    else:
+        if 'Sheet' in names:
+            sheet = book['Sheet']
+            sheet.title = topic
+            book.create_sheet('Sheet', 0)
+            book.save(grouppath)
+            sheet = book[topic]
+        else:
+            book.create_sheet('Sheet', 0)
+            sheet = book['Sheet']
+            sheet.title = topic
+            book.create_sheet('Sheet', 0)
+            book.save(grouppath)
+            sheet = book[topic]
+
     while training:
         if oneline:
             print('Please swipe your card to sign in to {} Training.'.format(topic))
             oneline = False
         number = input()
         if number == "0900704147":
-            book.save(topicpath)
+            book.save(grouppath)
             print("Group Training Stopped!!!\n")
             training = False
             break
@@ -176,10 +219,10 @@ def main():
         print("Hello, your personnel number is " + str(persnum))
         if logs >= 5:
             print("Your data is saved on row " + str(input_row), "at " +
-                  str(dt.datetime.now().strftime('%m/%d/%y %l:%M %p')) + ".")
+                  str(dt.datetime.now().strftime('%D %l:%M %p')) + ".")
         else:
             print("Your data is saved on row " + str(input_row), "at " +
-                  str(dt.datetime.now().strftime('%m/%d/%y %l:%M %p')) + ".\n")
+                  str(dt.datetime.now().strftime('%D %l:%M %p')) + ".\n")
         logs += 1
         condition = 0
         oldtime = dt.datetime.now()
